@@ -142,3 +142,116 @@ int main(void)
 	return 0;
 }
 ```
+
+<br/>
+
+### 3. 자료형
+
+문자를 표현할 때 
+
+→ char
+
+숫자를 표현할 때
+
+→ int, float, double
+
+자료형 자체가 없을 때
+
+→ void
+
+<br/>
+
+연봉 계산해보기
+
+```c
+#include <stdio.h>
+#define MONTHS 12 // define은 상수를 정의할 때 사용합니다.
+
+int main(void)
+{
+	double monthSalary = 500.5;
+	printf("%.2f만원 \n", monthSalary * MONTHS);
+
+	return 0;
+}
+
+// 출력 : 6006.00만원
+```
+
+<br/>
+
+문자 출력해보기!
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	char x = 'A';
+	printf("%c \n", x); // 문자를 출력할 때는 %c를 사용합니다.
+}
+```
+
+<br/>
+
+### <아스키코드>
+
+[https://www.ascii-codes.com/](https://www.ascii-codes.com/)
+
+![acsiicodes](image/acsiicodes.png)
+
+문자열은 사실 컴퓨터 내부에서 숫자로 동작되기 때문에, 아스키코드로 약속된 값(숫자)을 이용합니다. 
+
+예를 들어, A라는 문자는 65라는 수로 약속되어있어서, 65를 %c로 출력하면 A가 출력되고, A를 %d로 출력하면 65가 출력됩니다.
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	char x = 'A';
+	printf("%d \n", x); // A를 %d로 출력하면, 65가 출력됨
+	
+	int y = 65;
+	printf("%c \n", y); // 65를 %c로 출력하면, A가 출력됨
+	
+	return 0;
+}
+
+/* 
+출력
+65 
+A
+*/
+```
+
+<br/>
+
+### <진수법>
+
+10진수 : 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 …
+
+8진수 : 0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17 20 21 22 23 …
+
+16진수 : 0 1 2 3 4 5 6 7 8 9 A B C D E F 10 11 12 13 …
+
+100이라는 수를 각각 10진수, 8진수, 16진수로 출력해보기
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	int x = 100;
+	printf("10진수로 출력 : %d \n", x); // %d : 10진수로 출력
+	printf("8진수로 출력 : %o \n", x); // %o : 8진수로 출력
+	printf("16진수로 출력 : %x \n", x); // %x : 16진수로 출력
+}
+
+/*
+출력
+10진수로 출력 : 100 
+8진수로 출력 : 144 
+16진수로 출력 : 64
+*/
+```
