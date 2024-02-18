@@ -235,6 +235,8 @@ A
 
 16진수 : 0 1 2 3 4 5 6 7 8 9 A B C D E F 10 11 12 13 …
 
+<br/>
+
 100이라는 수를 각각 10진수, 8진수, 16진수로 출력해보기
 
 ```c
@@ -253,5 +255,111 @@ int main(void)
 10진수로 출력 : 100 
 8진수로 출력 : 144 
 16진수로 출력 : 64
+*/
+```
+
+<br/>
+
+### 4. 연산자
+
+---
+
+초(second)단위를 분(minute)단위로 바꾸는 예제
+
+```c
+#include <stdio.h>
+#define SECOND_PER_MINUTE 60
+
+int main(void)
+{
+	int input = 1000;
+	int minute = input / SECOND_PER_MINUTE;
+	int second = input % SECOND_PER_MINUTE;
+	printf("%d초는 %d분 %d초입니다.\n", input, minute, second);
+}
+
+// 출력 : 1000초는 16분 40초입니다.
+```
+
+<br/>
+
+<증감연산자>
+
+x++ → x에 +1을 한다
+
+++x → x에 +1을 한다
+
+x— → x에 -1을 한다
+
+—x → x에 -1을 한다
+
+<br/>
+
+그러면 x—, —x의 차이점은?
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	int x = 0;
+	printf("현재의 x는 %d입니다\n", x);
+	x++;
+	printf("현재의 x는 %d입니다\n", x);
+	printf("현재의 x는 %d입니다\n", x--); // 화면에 출력한 뒤, -1을 함
+	printf("현재의 x는 %d입니다\n", x);
+	printf("현재의 x는 %d입니다\n", --x); // -1을 하고, 화면에 출력함
+	return 0;
+}
+
+/*
+출력
+현재의 x는 0입니다
+현재의 x는 1입니다
+현재의 x는 1입니다
+현재의 x는 0입니다
+현재의 x는 -1입니다
+*/
+```
+
+<br/>
+
+<복합대입연산자>
+
+x += 1 은 x = x + 1과 같습니다.
+
+-=,*=,/=,%= 에도 동일하게 적용됩니다.
+
+증감연산자와 복합대입연산자는 코드의 길이를 줄일 수 있어서 자주 쓰이니, 알아두면 좋습니다!
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	int x = 100;
+	printf("현재 x의 값은 %d입니다.\n", x);
+	x += 50; // x = x + 50;
+	printf("현재 x의 값은 %d입니다.\n", x);
+	x -= 50; // x = x - 50;
+	printf("현재 x의 값은 %d입니다.\n", x);
+	x *= 50; // x = x * 50;
+	printf("현재 x의 값은 %d입니다.\n", x);
+	x /= 50; // x = x / 50;
+	printf("현재 x의 값은 %d입니다.\n", x);
+	x %= 3; // x = x % 3;
+	printf("현재 x의 값은 %d입니다.\n", x);
+
+	return 0;
+}
+
+/*
+출력
+현재 x의 값은 100입니다.
+현재 x의 값은 150입니다.
+현재 x의 값은 100입니다.
+현재 x의 값은 5000입니다.
+현재 x의 값은 100입니다.
+현재 x의 값은 1입니다.
 */
 ```
