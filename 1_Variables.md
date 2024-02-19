@@ -363,3 +363,133 @@ int main(void)
 현재 x의 값은 1입니다.
 */
 ```
+
+<br/>
+
+<관계연산자>
+
+== : x와 y가 같은지 판별
+
+!= : x와 y가 다른지 판별
+
+<,> : x와 y의 대소 판별
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	int x = 50, y = 30;
+	printf("x와 y가 같은가? \n%d\n", x == y);
+	printf("x와 y가 다른가? \n%d\n", x != y);
+	printf("x와 y가 큰가? \n%d\n", x > y);
+	printf("x와 y가 작은가? \n%d\n", x < y);
+	printf("x에 30읗 넣으면? \n%d\n", x = y);
+
+	return 0;
+}
+
+/*
+출력
+x와 y가 같은가? 
+0
+x와 y가 다른가? 
+1
+x와 y가 큰가? 
+1
+x와 y가 작은가? 
+0
+x에 30읗 넣으면? 
+30
+*/
+```
+
+<br/>
+
+&& : and 
+
+→ 둘 다 True여야만 True 반환
+
+|| : or 
+
+→ 둘 중 하나만 True여도 True 반환
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	int x = 50, y = 30;
+	printf("x가 y보다 크고, y는 40보다 작습니까?\n%d\n", (x>y) && (y < 40));
+	printf("x가 y보다 작거나 혹은 y는 30입니까?\n%d\n", (x>y) || (y < 40));
+
+	return 0;
+}
+
+/*
+출력
+x가 y보다 크고, y는 40보다 작습니까?
+1
+x가 y보다 작거나 혹은 y는 30입니까?
+1
+*/
+```
+
+<br/>
+
+<조건연산자>
+
+A ? B : C
+
+→ A가 참이면 B를 반환하고, A가 거짓이면 C를 반환
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	int x = -50, y = 30;
+	int absX = (x > 0) ? x : -x; // x가 0보다 크면 x를 반환하고, x가 0보다 작으면 -x를 반환
+	printf("x의 절댓값은 %d\n", absX);
+
+	int max = (x > y) ? x : y;
+	int min = (x < y) ? x : y;
+	printf("x와 y 중 큰 값은 %d\n", max);
+	printf("x와 y 중 작은 값은 %d\n", min);
+
+	return 0;
+}
+
+/*
+출력
+x의 절댓값은 50
+x와 y 중 큰 값은 30
+x와 y 중 작은 값은 -50
+*/
+```
+
+<br/>
+
+<pow()>
+
+pow()는 거듭제곱을 연산해주는 함수입니다.
+
+pow(a,b) → a의 b제곱 (ex. pow(2,3) → 2의 세제곱)
+
+```c
+#include <stdio.h>
+#include <math.h> // pow(),abs() 등의 함수들이 들어있는 math 라이브러리 호출
+
+int main(void)
+{
+	int x = pow(2,20);
+	printf("2의 20제곱은 %d입니다\n", x);
+
+	return 0;
+}
+
+/*
+출력
+2의 20제곱은 1048576입니다
+*/
+```
