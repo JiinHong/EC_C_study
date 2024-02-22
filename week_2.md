@@ -168,7 +168,7 @@ for(초기화식; 조건식; 증감식)
 
 <br/>
 
-별 10개 출력하기
+### 별 10개 출력하기
 
 ```c
 #include <stdio.h>
@@ -193,7 +193,7 @@ int main(void)
 
 <br/>
 
-별 100개 출력하기
+### 별 100개 출력하기
 
 ```c
 #include <stdio.h>
@@ -229,7 +229,7 @@ int main(void)
 
 <br/>
 
-피라미드 출력하기(조금 어려울 수 있습니다. 이해해보세요!)
+### 피라미드 출력하기(조금 어려울 수 있습니다. 이해해보세요!)
 
 ```c
 #include <stdio.h>
@@ -264,5 +264,217 @@ int main(void)
    ***************
   *****************
  *******************
+*/
+```
+
+<br/>
+
+### <알아두어야 할 것들!>
+
+- 0이 아닌 모든 수는 참으로 분류됩니다.
+- for(;;)와 while(1)은 무한루프로 동작합니다.
+
+```c
+for(;;) // 이는 조건식이 비어있으므로, 아무 조건없이 계속 반복한다는 의미입니다
+{
+	printf("*"); // "*"을 무수히 출력
+}
+```
+
+- break;는 반복문을 즉시 탈출합니다.
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	int a = 0;
+	while (1)
+	{
+		if (a == 3)
+		{
+			break;
+		}
+		printf("%d", a);
+		a++;
+	}
+	return 0;
+}
+
+/*
+출력
+012
+*/
+```
+
+<br/>
+
+### 2. 기본 입출력
+
+---
+
+### <scanf>
+
+scanf는 사용자에게 입력을 받는 문법입니다.
+
+구조는 scanf(”%d”, &x);와 같습니다.
+
+%d에 해당하는 값을 **&x**에 넣는다는 의미입니다. &x란, x라는 변수의 메모리 주소를 의미합니다.
+
+정수를 받고싶다면 %d, 문자를 받고싶다면 %c, 실수를 받고싶다면 %f 등의 다양한 문법을 사용하여 입력받아야합니다.
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	int x;
+	scanf("%d", &x); // 사용자가 입력한 수를 x에 넣음
+	printf("당신이 입력한 값은 %d입니다.\n", x);
+
+	return 0;
+}
+
+/*
+입력
+123
+
+출력
+당신이 입력한 값은 123입니다.
+*/
+```
+
+<br/>
+
+### <간단한 계산기 만들어보기>
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	char o;
+	int x, y;
+	while (1)
+	{
+		printf("수식을 입력하세요 : ");
+		scanf("%d %c %d", &x, &o, &y);
+
+		if (o == '+')
+		{
+			printf("%d %c %d = %d\n", x, o, y, x + y);
+		}
+		else if (o == '-')
+		{
+			printf("%d %c %d = %d\n", x, o, y, x - y);
+		}
+		else if (o == '*')
+		{
+			printf("%d %c %d = %d\n", x, o, y, x * y);
+		}
+		else if (o == '/')
+		{
+			printf("%d %c %d = %d\n", x, o, y, x / y);
+		}
+		else if (o == '%')
+		{
+			printf("%d %c %d = %d\n", x, o, y, x % y);
+		}
+		else
+		{
+			printf("입력이 잘못되었습니다.\n");
+		}
+
+		getchar();
+		// c언어에서는 enter도 하나의 문자로 인식하기 때문에
+		// getchar을 이용하여 버퍼를 처리해줍니다. 즉, enter(줄넘김)을 처리합니다.
+
+		printf("프로그램을 종료하시겠습니까? (y/n) ");
+		scanf("%c",&o);
+		if(o == 'n' || o == 'N')
+		{
+			continue; 
+			// continue는 아래의 코드를 실행하지 않고, 다시 while문의 첫부분으로 돌아간다는 의미입니다
+		}
+		else if(o == 'y' || o == 'Y')
+		{
+			break; // while문을 탈출
+		}
+		else
+		{
+			printf("입력이 잘못되었습니다.\n");
+		}
+	}
+
+	return 0;
+}
+```
+
+<br/>
+
+### <입력한 횟수만큼 정수를 더하는 프로그램>
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	int n, x, sum = 0;
+	printf("덧셈 횟수를 입력하세요 : ");
+	scanf("%d", &n);
+
+	for(int i = 0; i < n; i++)
+	{
+		// 정수를 입력받고, 그 정수를 sum에 계속 더함
+		printf("덧셈할 정수을 입력하세요 : ");
+		scanf("%d",&x);
+		sum += x;
+	}
+
+	printf("결과 : %d\n", sum);
+	return 0;
+}
+
+/*
+덧셈 횟수를 입력하세요 : 3
+덧셈할 정수을 입력하세요 : 1
+덧셈할 정수을 입력하세요 : 2
+덧셈할 정수을 입력하세요 : 3
+결과 : 6
+*/
+```
+
+<br/>
+
+### <구구단의 특정 단을 출력하는 프로그램>
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	int x;
+	printf("출력할 단을 입력하세요 : ");
+	scanf("%d", &x);
+
+	for(int i = 1; i<=9; i++)
+	{
+		printf("%d X %d = %d\n", x, i, x*i);
+	}
+
+	return 0;
+}
+
+/*
+출력할 단을 입력하세요 : 7
+7 X 1 = 7
+7 X 2 = 14
+7 X 3 = 21
+7 X 4 = 28
+7 X 5 = 35
+7 X 6 = 42
+7 X 7 = 49
+7 X 8 = 56
+7 X 9 = 63
 */
 ```
