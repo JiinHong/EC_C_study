@@ -478,3 +478,161 @@ int main(void)
 7 X 9 = 63
 */
 ```
+
+<br/>
+
+### 2. 사용자 정의 함수 (Function)
+
+특정한 기능을 수행하는 함수를 직접 만들어서 하나의 문제를 잘게 분해할 수 있습니다. 이렇게 사용자 정의 함수를 만들어서 사용하면 작업의 효율을 높일 수 있습니다.
+
+<br/>
+
+### <시간 더하기 프로그램>
+
+특정한 시간에 x분을 더하면 몇 시 몇 분이 되는지 알려주는 프로그램입니다.
+
+```c
+#include <stdio.h>
+
+// 전역 변수 선언
+int hour, minute, minuteAdd;
+
+int counter()
+{
+	minute += minuteAdd;
+	hour += minute / 60;
+	minute %= 60;
+	hour %= 24;
+}
+
+int main(void)
+{
+	printf("현재의 시를 입력하세요 : ");
+	scanf("%d",&hour);
+	printf("현재의 분을 입력하세요 : ");
+	scanf("%d",&minute);
+	printf("더할 분을 입력하세요 : ");
+	scanf("%d",&minuteAdd);
+	counter();
+	printf("더해진 시간은 %d시 %d분입니다.\n",hour,minute);
+	return 0;
+}
+
+/*
+현재의 시를 입력하세요 : 12
+현재의 분을 입력하세요 : 50
+더할 분을 입력하세요 : 30
+더해진 시간은 13시 20분입니다.
+*/
+```
+
+<br/>
+
+### <특정한 금액을 입력 받고, 해당 금액에서 화폐의 개수를 가장 적게 주는 프로그램>
+
+```c
+#include <stdio.h>
+
+// int minimum에서 int는 return할 값의 형태가 int형이라는 의미입니다.
+// 여기서 int money를 매개변수(파라미터)라고 하는데, 
+// 함수 내부에서 쓰일 값들을 선언해서, 입력받기 위해서 존재합니다.
+// 아래의 예시에서는 화폐의 개수를 셀 금액을 입력받고 있습니다.
+int minimum(int money)
+{
+	int count = 0;
+	while (money >= 50000) // 5만원보다 크면 
+	{
+		money -= 50000; // 5만원씩 빼가면서 화폐의 개수 세기
+		count += 1;
+	}
+	while (money >= 10000)
+	{
+		money -= 10000;
+		count += 1;
+	}
+	while (money >= 5000)
+	{
+		money -= 5000;
+		count += 1;
+	}
+	while (money >= 1000)
+	{
+		money -= 1000;
+		count += 1;
+	}
+
+	return count;
+}
+
+int main(void)
+{
+	int input;
+	printf("금액을 입력하세요 : ");
+	scanf("%d",&input);
+	printf("%d\n",minimum(input));
+
+	return 0;
+}
+
+/*
+금액을 입력하세요 : 66000
+4
+(5만원짜리 하나, 만원짜리 하나, 오천원짜리 하나, 천원짜리 하나, 총 4개)
+*/
+```
+
+<br/>
+
+### <1월 1일부터 며칠이 지났는지 알려주는 프로그램>
+
+```c
+#include <stdio.h>
+
+// 이 함수는 윤년을 감안하지 않습니다.
+// 현재 날짜를 매개변수로 넣어주기
+int getDays(int month, int day)
+{
+	int i, sum = 0;
+	
+	// 전 달까지의 일수를 더해주기
+	for (i = 1; i < month; i++)
+	{
+		if (i == 2)
+		{
+			sum += 28;
+		}
+		else if (i % 2 == 0 && i < 8) // 7월까지는 짝수 달이 30일
+		{
+			sum += 30;
+		}
+		else if (i % 2 == 1 && i > 8) // 9월부터는 홀수 달이 30일
+		{
+			sum += 30;
+		}
+		else
+		{
+			sum += 31;
+		}
+	}
+	return sum + day;
+}
+
+int main(void)
+{
+	int month, day;
+	printf("몇 월인지 입력하세요 : ");
+	scanf("%d", &month);
+	printf("며칠인지 입력하세요 : ");
+	scanf("%d", &day);
+
+	printf("오늘은 %d일째입니다.\n", getDays(month,day));
+
+	return 0;
+}
+
+/*
+몇 월인지 입력하세요 : 3
+며칠인지 입력하세요 : 1
+오늘은 60일째입니다.
+*/
+```
