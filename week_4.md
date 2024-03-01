@@ -144,3 +144,64 @@ ptr : 1806970284
 변경된 a : 20
 */
 ```
+
+<br/>
+
+### 2. 문자열
+
+문자열(String)은 메모리에 저장된 연속된 문자(char)들의 집합을 의미합니다.
+
+큰따옴표(””)를 사용하여 표현되며, 아래의 예시처럼 선언하면 됩니다.
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	char str1[7] = "JinHong";
+    // []안에는 문자열의 크기가 들어갑니다
+    // 문자열의 크기를 자동으로 지정되게 하고싶으면 아래처럼 크기 적는 칸을 비워주면 됩니다.
+	char str2[] = "My name is JinHong";
+
+    printf("%s\n",str1);
+    printf("%s\n",str2);
+}
+
+/*
+JinHong
+My name is JinHong
+*/
+```
+
+<br/>
+
+### <사용자에게 문자를 입력받아서 그 문자열의 글자수 세기>
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    char input[1001]; // 메모리의 크기가 1001인 문자열 선언
+    gets(input); 
+    // gets() 함수는 사용자에게 문자를 받아서 해당 변수에 넣는 함수입니다.
+    // 남는 칸들은 모두 빈값(\0)으로 채워집니다.
+    int count = 0;
+
+    // count 변수를 +1 해가면서 빈값(\0)이 나오면 while문 탈출
+    while (input[count] != '\0')
+    {
+        count++;
+    }
+    
+    printf("입력한 문자열의 길이는 %d입니다.\n",count);
+    printf("입력한 문자열은 %s입니다.\n",input);
+    return 0;
+}
+
+/*
+hello
+입력한 문자열의 길이는 5입니다.
+입력한 문자열은 hello입니다.
+*/
+```
