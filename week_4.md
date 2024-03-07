@@ -1,6 +1,6 @@
 # 4주차
 
-내용: 포인터
+내용: 포인터, 문자열
 
 <br/>
 
@@ -203,5 +203,50 @@ int main(void)
 hello
 입력한 문자열의 길이는 5입니다.
 입력한 문자열은 hello입니다.
+*/
+```
+
+<br/>
+
+### <string.h 라이브러리>
+
+string 헤더 파일에는 문자열과 관련하여 유용한 함수들을 많이 제공합니다.
+
+#include <string.h>로 선언하고, 관련 함수들을 사용하면 됩니다.  
+
+아래에는 대표적인 함수인 strlen(), strcmp(), strcpy()를 소개하겠습니다.
+
+```c
+#include <stdio.h>
+#include <string.h> // 문자열 관련 라이브러리 호출
+
+int main(void)
+{
+    char arr[10] = "hello";
+
+    // 문자열의 길이를 알려주는 strlen() 함수
+    printf("문자열의 길이 : %d\n", strlen(arr));
+
+    // 두 문자열을 비교해주는 strcmp() 함수
+    char arr1[10] = "A";
+    char arr2[10] = "C";
+    printf("문자열 비교 : %d\n", strcmp(arr1,arr2));
+    // arr1이 사전순으로 얼마나 앞에 있는지 출력합니다.
+    // arr1이 사전순으로 앞에 있으면 음수, 뒤에 있으면 양수
+    // 그리고 arr1과 arr2이 동일하면 0을 출력합니다.
+
+    // 문자열을 복사해주는 strcpy() 함수
+    char s1[10] = "hello";
+    char s2[6] = "world";
+    strcpy(s2,s1); // s1를 s2에 복사함
+    printf("문자열 복사 : %s\n", s2);
+
+    return 0;
+}
+
+/*
+문자열의 길이 : 5
+문자열 비교 : -2
+문자열 복사 : hello
 */
 ```
