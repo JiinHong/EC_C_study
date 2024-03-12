@@ -1,6 +1,6 @@
 # 📚 C 스터디
 
-[C study notion](https://www.notion.so/627fe7fea45f4aacb004f1c2021c8203?pvs=21)
+[C study notion](https://www.notion.so/C-5c114572ad5243e89e880d06b72a7462?pvs=4)
 
 <br/>
 
