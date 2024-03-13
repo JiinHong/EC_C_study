@@ -65,6 +65,32 @@ long double : 8 byte
 
 <br/>
 
+**각 데이터 유형에 대한 올바른 형식 지정자**
+
+정수형
+
+char : %c  
+
+short : %hd  
+
+int : %d  
+
+long : %ld  
+
+long long : %lld
+
+<br/>
+
+실수형
+
+float : %f  
+
+double : %lf  
+
+long double : %Lf  
+
+<br/>
+
 그렇다면 int형의 최댓값과 최솟값은?
 
 ```c
