@@ -85,7 +85,7 @@
 무작정 따라해보세요! 하나도 이해가 가지 않아도 됩니다. 어차피 뒤에서 다 배우게 됩니다!!
 
 ```
-#include <stdin.h>
+#include <stdio.h>
 
 int main(void)
 {
