@@ -638,3 +638,6 @@ int main(void)
 오늘은 60일째입니다.
 */
 ```
+
+### 이제 solved.ac CLASS 1 달성하러 가봅시다!
+https://solved.ac/class?class=1
