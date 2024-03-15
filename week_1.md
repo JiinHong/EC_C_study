@@ -381,7 +381,7 @@ int main(void)
 	printf("x와 y가 다른가? \n%d\n", x != y);
 	printf("x와 y가 큰가? \n%d\n", x > y);
 	printf("x와 y가 작은가? \n%d\n", x < y);
-	printf("x에 30읗 넣으면? \n%d\n", x = y);
+	printf("x에 30을 넣으면? \n%d\n", x = y);
 
 	return 0;
 }
