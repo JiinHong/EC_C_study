@@ -30,7 +30,7 @@ double 자료형을 이용해야한다
 
 	double z; // 실수 선언
 	z = 123456789.123456789;
-	printf("z : %f \n",x);
+	printf("z : %f \n",z);
 	printf("z의 메모리 용량은 %d \n",sizeof(z));
 
 	return 0;
@@ -99,7 +99,7 @@ long double : %Lf
 
 int main(void)
 {
-	int x = LONG_MAX;
+	int x = INT_MAX;
 	printf("int형의 최댓값 x는 %d \n", x); // 출력값 : 2147483647 (약 21억)
 	
 	// 여기서 1을 더하면 어떻게 될까?
@@ -132,7 +132,7 @@ int main(void)
 	printf("x - y = %d \n", x - y);
 	printf("x * y = %d \n", x * y);
 	printf("x / y = %d \n", x / y); // 몫만 출력
-	printf("x / y = %d \n", x % y); // 나머지만 출력
+	printf("x %% y = %d \n", x % y); // 나머지만 출력
 
 	// 실제 나눈 값을 알고 싶다면, 연산을 실수형으로 수행해야합니다.
 	printf("x / y = %f \n", (double)x / y); // 실제 나눈 값
