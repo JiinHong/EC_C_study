@@ -640,4 +640,6 @@ int main(void)
 ```
 
 ### 이제 solved.ac CLASS 1 달성하러 가봅시다!
-https://solved.ac/class?class=1
+https://solved.ac/class?class=1  
+-> 1000, 1001, 1008, 10998, 1330, 2475, 2557, 2753, 9498, 10869, 11654  
+-> 10950, 10951, 10952, 2438, 2439
