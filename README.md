@@ -42,7 +42,9 @@
 
 ## **Baekjoon Online Judge**
 
-[단계별로 풀어보기 링크!](https://www.acmicpc.net/step)
+[단계별로 풀어보기 링크!](https://www.acmicpc.net/step)  
+
+[solved.ac CLASS 1 링크!](https://solved.ac/class/1/solved)
 
 <br/>
 
