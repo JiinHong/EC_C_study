@@ -30,7 +30,7 @@ double 자료형을 이용해야한다
 
 	double z; // 실수 선언
 	z = 123456789.123456789;
-	printf("z : %f \n",z);
+	printf("z : %lf \n",z);
 	printf("z의 메모리 용량은 %d \n",sizeof(z));
 
 	return 0;
@@ -475,7 +475,7 @@ pow(a,b) → a의 b제곱 (ex. pow(2,3) → 2의 세제곱)
 
 ```c
 #include <stdio.h>
-#include <math.h> // pow(),abs() 등의 함수들이 들어있는 math 라이브러리 호출
+#include <math.h> // pow() 등의 함수들이 들어있는 math 라이브러리 호출
 
 int main(void)
 {
