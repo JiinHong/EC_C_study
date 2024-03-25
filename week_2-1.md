@@ -650,6 +650,9 @@ https://solved.ac/class?class=1
 배열 학습 뒤
 -> 2525, 2562, 5597
 
+숙제
+-> 5532, 11943
+
 <br/>
 
 ### Visual Studio에서 scanf 오류 해결
