@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/parkjinhong/Documents/GitHub/EC_C_study",
-      "program": "/Users/parkjinhong/Documents/GitHub/EC_C_study/build/Debug/outDebug"
+      "cwd": "/Users/parkjinhong",
+      "program": "/Users/parkjinhong/build/Debug/outDebug"
     }
   ]
 }
